@@ -31,7 +31,7 @@ abstract class EloquentRepository implements RepositoryInterface
 
     public function getAll()
     {
-        $result = $this->model->all();
+        $result = $this->model->all()->sortByDesc('id');
         return $result;
     }
 
@@ -69,5 +69,10 @@ abstract class EloquentRepository implements RepositoryInterface
             $model = $model->where($d['field'], $d['operator'], $d['value']);
         }
         return $model->orderBy('created_at', 'DESC')->get();
+    }
+
+    public function findBySlug($slug)
+    {
+        return $this->model->where('slug', $slug)->first();
     }
 }
