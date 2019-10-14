@@ -14,4 +14,14 @@ class UserService implements UserServiceInterface
     {
         $this->userRepo = $userRepo;
     }
+
+    function getAll()
+    {
+        // TODO: Implement getAll() method.
+    }
+
+    function findById($id)
+    {
+        // TODO: Implement findById() method.
+    }
 }

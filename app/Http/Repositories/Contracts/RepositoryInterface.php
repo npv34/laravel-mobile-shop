@@ -17,4 +17,6 @@ interface RepositoryInterface
     function find($id, $columns = array('*'));
 
     function findByClauses(array $data);
+
+    function findBySlug($slug);
 }
